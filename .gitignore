@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Video files (too large for GitHub)
+videos/*.mp4
+videos/*.mov
+videos/*.avi
+!videos/.gitkeep
+
+# Node modules (not used, but just in case)
+node_modules/
