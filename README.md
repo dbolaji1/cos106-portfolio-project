@@ -1,144 +1,153 @@
-# MIVA Open University - COS 106 Term Project
-## Student Portfolio & Academic Management Website
+# COS 106 Term Project — Personal Portfolio & Academic Planner
 
-### Course Details
-* **Course:** COS 106 - Introduction to Web Technologies (Computing)
-* **Academic Level:** 100 Level (100L)
-* **Semester:** Term Project (20 Marks)
-* **Institution:** MIVA Open University, Nigeria
+## My Details
 
-### Student Profile
-* **Student Name:** Oluwadara Bolaji
-* **Programme:** B.Sc. Software Engineering
-* **Matriculation/Student ID:** COS/100L/2025/MIVA
-* **Email:** [darabolaji01@gmail.com](mailto:darabolaji01@gmail.com)
+- **Name:** Oluwadara Bolaji
+- **Student ID:** 2025/B/SENG/0541
+- **Programme:** B.Sc. Software Engineering (100 Level)
+- **Course:** COS 106 — Introduction to Web Technologies
+- **Institution:** MIVA Open University, Nigeria
+- **Email:** o.bolaji6795@miva.edu.ng
 
 ---
 
-## 1. Project Overview
-This project is a fully functional, multi-page, responsive website designed as a personal portfolio and academic management platform. It represents the final practical term project for COS 106 at MIVA Open University.
+## What I Built
 
-The primary goal of this application is to demonstrate clean, semantic implementation of HTML5, responsive styling with CSS3 (Flexbox/Grid), and interactive client-side logic using vanilla (pure) JavaScript. The website is structured around an authentic student persona to showcase coursework, skills, personal projects, and interactive tools for tracking academic tasks.
+This is my term project for COS 106. It is a 5-page personal portfolio website built with HTML, CSS, and vanilla JavaScript. The site has:
 
----
+- A **homepage** with my photo, a short bio, quick facts about me, and a table of my current courses
+- An **About Me** page covering my education, career goals, technical skills (with animated skill bars), hobbies, and a short video introduction
+- A **Projects** page showing three sample projects I have worked on
+- An **Academic Planner** where I can add, edit, complete, and delete tasks — with localStorage so tasks are saved between visits
+- A **Contact** page with a form that validates inputs before showing a success message
 
-## 2. Feature List
-
-### A. Core Website Pages
-1. **Homepage (`index.html`):**
-   * Professional greeting, profile photo, and biography.
-   * "Quick Facts" grid highlighting key educational and professional goals.
-   * Semantic "Current Courses" table showing course codes, titles, and unit loads for 100L.
-2. **About Me (`pages/about.html`):**
-   * Detailed educational timeline at MIVA Open University.
-   * Interactive video introduction (`videos/introduction.mp4`) with a custom fallback poster image.
-   * Responsive Technical Skills Grid showing animated proficiency level fill-bars.
-   * Hobbies and interests panel representing academic and lifestyle interests.
-3. **Projects (`pages/projects.html`):**
-   * Interactive showcase of 3 sample projects (Calculator, To-Do App, and the Personal Portfolio itself).
-   * Hover effects, category tags (e.g., HTML, CSS, Responsive), and direct source code links.
-4. **Academic Planner (`pages/planner.html`):**
-   * Active, client-side, local-first planner designed to track assignments and deadlines.
-5. **Contact (`pages/contact.html`):**
-   * Form with real-time, client-side input validation and error feedback.
-
-### B. Interactive Academic Planner Features
-* **Create Task:** Form supporting task description, custom due dates, and priority selections (High, Medium, Low).
-* **Complete Task:** Interactive checkboxes that visually strike-through completed tasks and update the active count.
-* **Delete Task:** Confirmational modal delete operation that instantly removes a task.
-* **Edit Task:** Standard browser prompt permettant in-place title updates for any task.
-* **Status Filtering:** Dynamic tabs to filter list items by `All`, `Active` (Pending), or `Completed`.
-* **State Persistence (`localStorage`):** High-level synchronization that maintains tasks, completed states, due dates, priority tiers, and active filters across page reloads.
-* **Friendly Empty States:** Shows custom, encouraging empty-state feedback messages when lists are filtered empty.
-* **Live Task Counter:** Dynamically renders the total number of remaining active/pending tasks.
-
-### C. Contact Form Validation
-* **Field Checks:** Validates Full Name, Email, Phone Number, and Message body.
-* **Email Syntax Match:** Assures standard email formats with a regular expression pattern.
-* **Phone Digit Rule:** Strict requirement checking that the phone input contains only numerical digits (no letters or non-numeric symbols, as per curriculum guidelines).
-* **Length Guard:** Enforces a minimum length of 10 characters for the message input to prevent blank or meaningless submissions.
-* **Dynamic Inline Errors:** Highlights erroneous input boxes with a red border and reveals clear instruction labels underneath.
-* **Live Clears:** Subtly removes error displays the moment a student begins typing valid data.
-* **Submission Success Notification:** Features a green, auto-fading success box upon validating all fields, followed by an immediate form reset.
+Everything is responsive and works on both desktop and mobile screens.
 
 ---
 
-## 3. Technology Stack & Design Decisions
-* **Semantic HTML5:** Structuring with `<nav>`, `<section>`, `<footer>`, `<video>`, and `<table>` blocks.
-* **Responsive CSS3 (Grid & Flexbox):** Multi-column grid structures that degrade gracefully into stacked blocks on mobile devices without any external libraries or frameworks (No Bootstrap, React, or jQuery used).
-* **Primary Navy Theme (`#1a3a5c`):** Deep academic navy representing focus and professional development.
-* **Accent Gold Theme (`#f0c040`):** Energetic gold highlighting buttons, links, and important focal points.
-* **Vanilla JavaScript:** Clean, procedural, event-driven DOM manipulation.
+## Pages
+
+### Homepage (`index.html`)
+- My name, profile photo, and a short introduction
+- A "Quick Facts" grid (Education, Skills, Goals)
+- A table showing my current 100L courses with codes, titles, and unit loads
+
+### About Me (`pages/about.html`)
+- My educational background at MIVA Open University
+- My career aspirations and what I hope to do after my degree
+- A skills section with animated progress bars (HTML5, CSS3, JavaScript, Problem Solving, Teamwork, Git)
+- Hobbies and interests
+- A short video introduction — **note:** the video file was too large to upload to GitHub, so only the poster image is in the repo. I included a poster fallback so the page does not look broken.
+
+### Projects (`pages/projects.html`)
+- Three project cards: Calculator App, To-Do List App, and this Portfolio itself
+- Each card has a screenshot, a short description, technology tags, and a link to view the source code
+
+### Academic Planner (`pages/planner.html`)
+- A form to add new tasks with descriptions, due dates, and priority levels (High, Medium, Low)
+- Checkboxes to mark tasks as done (completed tasks get a strikethrough)
+- Edit and delete buttons for each task
+- Filter buttons to show All, Active, or Completed tasks
+- A live counter showing how many tasks are still pending
+- Friendly messages when a filtered list is empty
+- All tasks are saved to localStorage so they stay even after closing the browser
+
+### Contact (`pages/contact.html`)
+- My contact information (email, phone, location, GitHub)
+- A form with fields for Name, Email, Phone Number, and Message
+- JavaScript validation that checks:
+  - No field is left empty
+  - Email matches a proper format
+  - Phone number contains only digits
+  - Message is at least 10 characters long
+- Errors appear under each field in red, and clear when you start typing
+- A green success message appears when the form is complete, then the form resets
 
 ---
 
-## 4. Folder Structure
+## Technologies Used
+
+- **HTML5** — semantic tags like `<nav>`, `<section>`, `<footer>`, `<table>`, and `<video>`
+- **CSS3** — external stylesheet, Flexbox and CSS Grid for layout, media queries for responsive design, transitions and hover effects
+- **JavaScript (Vanilla)** — no libraries or frameworks. Used for:
+  - Mobile hamburger menu toggle
+  - Contact form validation with live error clearing
+  - Academic Planner CRUD operations with localStorage
+- **Color Scheme** — navy blue (`#1a3a5c`) and gold (`#f0c040`) on a light gray background
+
+---
+
+## Folder Structure
+
 ```
 cos106-portfolio-project/
-├── index.html                  # Homepage (Main Landing Page)
-├── README.md                   # Project Documentation
-├── .gitignore                  # Git Ignore File
+├── index.html
+├── README.md
+├── .gitignore
 ├── css/
-│   └── style.css               # External CSS stylesheet with styling rules
+│   └── style.css
 ├── js/
-│   └── main.js                # Core JS file for Hamburger, Form, & Planner
+│   └── main.js
 ├── images/
-│   ├── profile.jpg             # Student Profile Photograph
-│   ├── project-calculator.png  # Screenshot for Calculator Project
-│   ├── project-todo.png        # Screenshot for To-Do List Project
-│   ├── project-portfolio.png   # Screenshot for Portfolio Project
-│   └── video-poster.jpg        # Video Thumbnail Image
+│   ├── profile.jpg
+│   ├── project-calculator.png
+│   ├── project-todo.png
+│   ├── project-portfolio.png
+│   └── video-poster.jpg
 ├── videos/
-│   └── introduction.mp4        # Quick student introductory video asset
+│   └── introduction.mp4        (not in repo — too large for GitHub)
 └── pages/
-    ├── about.html              # About Me section
-    ├── projects.html           # Project Showcase page
-    ├── planner.html            # Academic Planner tool
-    └── contact.html            # Form contact page
+    ├── about.html
+    ├── projects.html
+    ├── planner.html
+    └── contact.html
 ```
 
 ---
 
-## 5. Installation & Local Running Instructions
-1. Clone the repository from GitHub:
-   ```bash
+## How to Run Locally
+
+1. Clone the repo:
+   ```
    git clone https://github.com/dbolaji1/cos106-portfolio-project.git
    ```
-2. Navigate to the project root:
-   ```bash
-   cd cos106-portfolio-project
+2. Open `index.html` in any browser (Chrome, Firefox, Edge, or Safari).
+3. Or serve it locally with Python if you want to test the video:
    ```
-3. Open `index.html` directly in any web browser of your choice (Chrome, Safari, Firefox, or Edge):
-   * *Option A:* Double-click the file inside your local file explorer.
-   * *Option B:* Run a lightweight local server if you wish to test fully-rendered video loads (e.g., using the Python command: `python3 -m http.server 8000`).
+   python3 -m http.server 8000
+   ```
+   Then visit `http://localhost:8000`.
 
 ---
 
-## 6. GitHub Pages Deployment Instructions
-To host the portfolio live for assignment submission:
-1. Push your completed codebase to your public GitHub repository (`https://github.com/dbolaji1/cos106-portfolio-project`).
-2. On GitHub, navigate to the **Settings** tab of the repository.
-3. Scroll down on the left-side menu and select **Pages** (under the "Code and automation" section).
-4. Under the **Build and deployment** settings:
-   * **Source:** Select `Deploy from a branch`.
-   * **Branch:** Set to `main` (or `master`) and specify `/ (root)` as the folder.
-5. Click **Save**.
-6. Wait 1-2 minutes. GitHub will generate a live URL. It will look like:
+## Deploying to GitHub Pages
+
+1. Go to the repository **Settings** tab on GitHub.
+2. Click **Pages** in the left sidebar.
+3. Under "Build and deployment", set **Source** to "Deploy from a branch" and **Branch** to `main` (root folder).
+4. Click **Save**.
+5. After a minute or two, the site will be live at:
    `https://dbolaji1.github.io/cos106-portfolio-project/`
-7. Copy this URL and submit it alongside your repository link to the MIVA student portal!
 
 ---
 
-## 7. Screenshots Section
+## Challenges I Faced
 
-### Desktop Dashboard Layout
-*The primary desktop interface highlights the cohesive color palette of deep academic navy (`#1a3a5c`) and vibrant gold accents (`#f0c040`) across a sticky header, interactive grids, and tables.*
-
-### Academic Planner Interface
-*Displays the student planner with priority color-coded tags, completed check strikes, inline editing prompts, deletion triggers, empty-state notes, and robust filter tabs.*
-
-### Responsive Mobile Drawer
-*On compact devices (under 768px wide), the standard menu degrades gracefully into an accessible, animated hamburger menu drawer with smooth toggle transforms.*
+- The video file for my introduction was over 100MB, which is GitHub's file size limit. I had to gitignore it and use a poster image as a fallback.
+- Getting the localStorage to work properly with the task filters took some trial and error. I had to make sure the filter state was saved and restored correctly on page reload.
+- The navigation bar is repeated across all five HTML pages, which means any change has to be made in five places. I understand that frameworks solve this problem, but for this project we had to use only vanilla HTML/CSS/JS.
+- Making the planner form and the contact form validation feel consistent was something I worked on. The contact form has inline error messages but the planner still uses browser alerts for some things — something I would improve if I had more time.
 
 ---
-*Developed with ❤️ as part of the 100L Software Engineering Curriculum at MIVA Open University.*
+
+## What I Would Improve
+
+- Use the same inline error style from the contact form on the planner instead of the browser popups
+- Add a proper favicon
+- Record a shorter, compressed version of my introduction video that fits within GitHub's limits
+- Make the navigation reusable instead of copying it into every HTML file
+- Add keyboard focus styles for better accessibility
+
+---
+
+Built as part of my COS 106 coursework at MIVA Open University, 2026.
